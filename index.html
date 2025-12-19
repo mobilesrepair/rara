@@ -1,985 +1,505 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ms">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rara Zahra Empire Beauty • Extra Luxury</title>
-
-  <!-- Premium Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rara Zahra Empire Beauty</title>
+  <meta name="description" content="Booking rawatan & produk - auto WhatsApp" />
   <style>
     :root{
-      --bg:#ffffff;
-      --ink:#221b2b;
-      --muted:#6d627a;
-
-      --plum:#5b2450;
-      --violet:#7c3aed;
-      --lav:#f6f0ff;
-
-      --gold:#b88a44;
-      --gold2:#e5c07b;
-
-      --card:#ffffff;
-      --border: rgba(34,27,43,.10);
-      --shadow: 0 18px 60px rgba(20, 10, 40, .10);
-
-      --wa:#25d366;
-      --wa2:#128c7e;
+      --bg:#0b0b10;
+      --card:#12121a;
+      --muted:#b8b8c6;
+      --text:#f5f5ff;
+      --brand:#a855f7;
+      --brand2:#fbbf24;
+      --border:rgba(255,255,255,.10);
+      --shadow: 0 18px 45px rgba(0,0,0,.35);
+      --radius:18px;
     }
-
     *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
     body{
-      margin:0;
-      font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      background:var(--bg);
-      color:var(--ink);
+      margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      background: radial-gradient(900px 500px at 15% 0%, rgba(168,85,247,.22), transparent 60%),
+                  radial-gradient(900px 500px at 85% 10%, rgba(251,191,36,.16), transparent 60%),
+                  var(--bg);
+      color:var(--text);
     }
-
-    /* Luxury background glow */
-    .bg{
-      position:fixed;
-      inset:-160px;
-      pointer-events:none;
-      z-index:-1;
-      background:
-        radial-gradient(900px 540px at 18% 6%, rgba(246,240,255,.95), rgba(255,255,255,0) 62%),
-        radial-gradient(900px 540px at 86% 10%, rgba(247,239,255,.95), rgba(255,255,255,0) 60%),
-        radial-gradient(900px 540px at 70% 92%, rgba(246,240,255,.85), rgba(255,255,255,0) 60%);
+    a{color:inherit; text-decoration:none}
+    .container{max-width:1100px; margin:0 auto; padding:18px}
+    .nav{
+      position:sticky; top:0; z-index:10;
+      backdrop-filter: blur(10px);
+      background: rgba(11,11,16,.55);
+      border-bottom:1px solid var(--border);
     }
-
-    .container{
-      width:min(1120px, calc(100% - 34px));
-      margin-inline:auto;
-    }
-
-    /* ===== Header ===== */
-    header{
-      position:sticky;
-      top:0;
-      z-index:50;
-      background: rgba(255,255,255,.88);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(34,27,43,.08);
-    }
-    .head{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:14px;
-      padding: 12px 0;
-    }
-
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:14px;
-      min-width: 280px;
-    }
-
-    .logoWrap{
-      width:74px;
-      height:74px;
-      border-radius:22px;
-      background: linear-gradient(135deg, rgba(184,138,68,.18), rgba(91,36,80,.10));
-      border: 1px solid rgba(184,138,68,.33);
-      box-shadow: 0 14px 30px rgba(184,138,68,.14);
-      display:grid;
-      place-items:center;
-      overflow:hidden;
-    }
-    .logoWrap img{
-      width:86%;
-      height:86%;
-      object-fit:contain;
-      filter: drop-shadow(0 10px 14px rgba(0,0,0,.10));
-    }
-
-    .brandTitle{
-      margin:0;
-      font-family:'Playfair Display',serif;
-      font-weight:700;
-      letter-spacing:.6px;
-      color:var(--plum);
-      font-size: 19px;
-      line-height:1.05;
-    }
-    .brandSub{
-      margin-top:4px;
-      font-size: 12.5px;
-      color: var(--muted);
-      font-weight:600;
-    }
-
-    nav{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      justify-content:flex-end;
-      align-items:center;
-    }
-    nav a{
-      text-decoration:none;
-      color: var(--muted);
-      font-weight:800;
-      font-size: 13px;
-      padding: 10px 12px;
-      border-radius: 999px;
-      border: 1px solid transparent;
-      transition:.2s;
-    }
-    nav a:hover{
-      background: rgba(246,240,255,.9);
-      border-color: rgba(184,138,68,.22);
-      color: var(--plum);
-    }
-
+    .nav-inner{display:flex; align-items:center; justify-content:space-between; gap:12px}
+    .brand{display:flex; align-items:center; gap:12px; padding:10px 0}
+    .brand img{width:46px; height:46px; object-fit:contain}
+    .brand .title{line-height:1.1}
+    .brand .title b{display:block; font-size:16px}
+    .brand .title span{display:block; font-size:12px; color:var(--muted)}
+    .nav-actions{display:flex; gap:10px; align-items:center}
     .btn{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding: 11px 14px;
-      border-radius: 999px;
-      border:1px solid transparent;
-      font-weight:900;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.06);
+      color:var(--text);
+      padding:10px 14px;
+      border-radius:999px;
       cursor:pointer;
-      transition:.2s;
-      text-decoration:none;
-      white-space:nowrap;
+      font-weight:600;
+      transition: .18s ease;
+      display:inline-flex; align-items:center; gap:8px;
+      box-shadow: 0 8px 20px rgba(0,0,0,.20);
     }
-    .btnWa{
-      background: var(--wa);
-      color:#fff;
+    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.10)}
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(168,85,247,.95), rgba(251,191,36,.65));
+      border-color: transparent;
     }
-    .btnWa:hover{ background: var(--wa2); }
-    .btnGold{
-      background: rgba(184,138,68,.12);
-      border-color: rgba(184,138,68,.28);
-      color: var(--plum);
+    .hero{padding:22px 0 10px}
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:16px;
+      align-items:stretch;
     }
-    .btnGold:hover{ background: rgba(184,138,68,.18); }
-
-    /* ===== Hero ===== */
-    .hero{ padding: 26px 0 18px; }
-    .heroCard{
-      border-radius: 28px;
-      border: 1px solid rgba(184,138,68,.18);
-      background:
-        linear-gradient(135deg, rgba(246,240,255,.98), rgba(255,255,255,.92));
+    .card{
+      background: rgba(18,18,26,.72);
+      border:1px solid var(--border);
+      border-radius: var(--radius);
       box-shadow: var(--shadow);
       overflow:hidden;
     }
-    .heroInner{
-      display:grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap:18px;
-      padding: 26px;
-      align-items:center;
-    }
-    .tag{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding: 10px 14px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.78);
-      border: 1px solid rgba(184,138,68,.22);
-      color: var(--plum);
-      font-weight:900;
-      font-size: 12px;
-      width:fit-content;
-    }
-    .tag::before{ content:"✦"; color: var(--gold); font-size: 14px; }
-    .hero h1{
-      margin: 14px 0 8px;
-      font-family:'Playfair Display',serif;
-      font-size: clamp(30px, 3.9vw, 50px);
-      letter-spacing:.6px;
-      line-height:1.08;
-      color: var(--plum);
-    }
-    .hero p{
-      margin:0 0 16px;
+    .hero-card{padding:18px}
+    .kicker{
+      display:inline-flex; gap:8px; align-items:center;
+      padding:6px 10px;
+      border:1px solid var(--border);
+      border-radius:999px;
+      background: rgba(255,255,255,.05);
       color: var(--muted);
-      line-height:1.7;
-      font-size: 15px;
-      max-width: 62ch;
+      font-size:12px;
+      margin-bottom:10px;
     }
-    .heroActions{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      margin-top: 10px;
-    }
+    h1{margin:0 0 10px; font-size:30px; letter-spacing:.2px}
+    .lead{margin:0; color:var(--muted); line-height:1.6}
+    .hero-cta{margin-top:14px; display:flex; gap:10px; flex-wrap:wrap}
 
-    .heroSide{
-      background: rgba(255,255,255,.72);
-      border: 1px solid rgba(184,138,68,.16);
-      border-radius: 22px;
-      padding: 18px;
-    }
-    .heroSide h3{
-      margin:0 0 10px;
-      font-family:'Playfair Display',serif;
-      color: var(--plum);
-      letter-spacing:.3px;
-    }
-    .list{
-      display:grid;
-      gap:10px;
-      margin-top: 10px;
-    }
-    .li{
-      display:flex;
-      gap:10px;
-      align-items:flex-start;
-      padding: 10px 12px;
-      border-radius: 16px;
-      background: rgba(246,240,255,.65);
-      border: 1px solid rgba(34,27,43,.06);
-    }
-    .tick{
-      width:26px;height:26px;
-      border-radius:10px;
-      display:grid;
-      place-items:center;
-      background: rgba(184,138,68,.18);
-      border:1px solid rgba(184,138,68,.22);
-      color: var(--gold);
-      font-weight:900;
-      flex:0 0 auto;
-    }
-    .li .t{
-      color: var(--muted);
-      font-size: 13px;
-      line-height:1.5;
-    }
-    .li strong{ color: var(--plum); }
+    .side-card{padding:16px}
+    .side-card h3{margin:0 0 8px; font-size:16px}
+    .bullets{margin:0; padding-left:18px; color:var(--muted); line-height:1.7}
 
-    /* ===== Sections ===== */
-    section{ padding: 22px 0; }
-    .secHead{
-      display:flex;
-      justify-content:space-between;
-      align-items:flex-end;
-      gap:14px;
-      margin-bottom: 14px;
-    }
-    .secTitle{
-      margin:0;
-      font-family:'Playfair Display',serif;
-      font-size: 28px;
-      color: var(--plum);
-      letter-spacing:.4px;
-    }
-    .secSub{
-      margin:0;
-      color: var(--muted);
-      font-size: 14px;
-      line-height:1.6;
-      max-width: 80ch;
-    }
-
+    .section{padding:12px 0}
+    .section h2{margin:8px 0 12px; font-size:20px}
     .grid{
       display:grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
+      gap:14px;
     }
-    .card{
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 14px;
-      box-shadow: 0 12px 30px rgba(0,0,0,.05);
-      transition:.2s;
+    .p-card{display:flex; flex-direction:column}
+    .p-img{
+      width:100%;
+      aspect-ratio: 4/3;
+      background: rgba(255,255,255,.06);
+      border-bottom:1px solid var(--border);
+      overflow:hidden;
     }
-    .card:hover{
-      transform: translateY(-4px);
-      box-shadow: 0 20px 40px rgba(91,36,80,.12);
-      border-color: rgba(184,138,68,.22);
+    .p-img img{width:100%; height:100%; object-fit:cover}
+    .p-body{padding:14px}
+    .p-title{margin:0 0 6px; font-weight:800}
+    .p-desc{margin:0 0 10px; color:var(--muted); line-height:1.55; font-size:14px}
+    .p-foot{display:flex; justify-content:space-between; align-items:center; gap:10px}
+    .price{font-weight:900}
+    .tag{
+      font-size:12px; color:var(--muted);
+      padding:6px 10px; border:1px solid var(--border);
+      border-radius:999px; background: rgba(255,255,255,.04);
     }
-    .pill{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(246,240,255,.8);
-      border: 1px solid rgba(184,138,68,.18);
-      color: var(--plum);
-      font-weight:900;
-      font-size: 12px;
-      width:fit-content;
-    }
-    .pill::before{ content:"✦"; color: var(--gold); }
-
-    .svcTitle{
-      margin:10px 0 6px;
-      font-weight:900;
-      color: var(--plum);
-      font-size: 14px;
-      letter-spacing:.2px;
-    }
-    .svcText{
-      margin:0 0 10px;
-      color: var(--muted);
-      font-size: 12.8px;
-      line-height:1.55;
-    }
-
-    .priceRow{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:10px;
-      padding-top: 10px;
-      border-top: 1px dashed rgba(34,27,43,.10);
-      margin-top: 10px;
-    }
-    .price{
-      font-weight:900;
-      color: var(--ink);
-    }
-
-    .frame{
-      border-radius: 24px;
-      padding: 18px;
-      border: 1px solid rgba(184,138,68,.20);
-      background: linear-gradient(135deg, rgba(255,255,255,.92), rgba(246,240,255,.74));
-      box-shadow: var(--shadow);
-    }
-    .frameCap{
-      display:inline-flex;
-      gap:10px;
-      align-items:center;
-      font-weight:900;
-      letter-spacing:.5px;
-      color: var(--gold);
-      text-transform:uppercase;
-      font-size: 12px;
-    }
-    .frame h3{
-      margin: 10px 0 10px;
-      font-family:'Playfair Display',serif;
-      color: var(--plum);
-      font-size: 24px;
-      letter-spacing:.3px;
-    }
-    .checks{
-      list-style:none;
-      padding:0;margin:0;
-      display:grid;
-      gap:10px;
-    }
-    .checks li{
-      display:flex;
-      gap:10px;
-      align-items:flex-start;
-      color: var(--muted);
-      font-size: 14px;
-      line-height:1.55;
-    }
-    .checks li::before{
-      content:"✓";
-      width:22px;height:22px;
-      border-radius:10px;
-      display:grid;
-      place-items:center;
-      background: rgba(184,138,68,.18);
-      border:1px solid rgba(184,138,68,.22);
-      color: var(--gold);
-      font-weight:900;
-      flex:0 0 auto;
-      margin-top:1px;
-    }
-
-    footer{
-      margin-top: 18px;
-      padding: 26px 0;
-      border-top: 1px solid rgba(34,27,43,.08);
-      color: var(--muted);
-      font-size: 13px;
-    }
-    .foot{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      flex-wrap:wrap;
-      gap:10px;
-    }
-    .gold{ color: var(--gold); font-weight:900; }
-
-    /* Floating WhatsApp */
-    .waFloat{
-      position: fixed;
-      right: 18px;
-      bottom: 18px;
-      z-index: 99;
-      width: 58px;
-      height: 58px;
-      border-radius: 18px;
-      background: var(--wa);
-      display:grid;
-      place-items:center;
-      box-shadow: 0 18px 40px rgba(0,0,0,.18);
-      border: 1px solid rgba(255,255,255,.4);
-      cursor:pointer;
-      transition:.2s;
-    }
-    .waFloat:hover{ background: var(--wa2); transform: translateY(-2px); }
-    .waFloat svg{ width:28px; height:28px; fill:#fff; }
 
     /* Modal */
-    .modalBg{
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,.35);
-      display:none;
-      align-items:flex-end;
-      justify-content:center;
-      padding: 18px;
-      z-index: 120;
+    .modal-wrap{
+      position:fixed; inset:0; display:none;
+      background: rgba(0,0,0,.55);
+      align-items:center; justify-content:center;
+      padding:16px;
+      z-index:50;
     }
     .modal{
-      width: min(560px, 100%);
-      background:#fff;
+      width:min(720px, 100%);
       border-radius: 22px;
-      border: 1px solid rgba(34,27,43,.10);
-      box-shadow: 0 25px 70px rgba(0,0,0,.25);
       overflow:hidden;
+      border:1px solid var(--border);
+      background: rgba(18,18,26,.90);
+      box-shadow: var(--shadow);
       transform: translateY(10px);
-      animation: pop .18s ease-out forwards;
+      opacity:0;
+      transition: .18s ease;
     }
-    @keyframes pop{ to{ transform: translateY(0); } }
-    .modalHead{
-      padding: 16px 16px 12px;
-      background: linear-gradient(135deg, rgba(246,240,255,.95), rgba(255,255,255,.92));
-      border-bottom: 1px solid rgba(34,27,43,.08);
-      display:flex;
-      align-items:flex-start;
-      justify-content:space-between;
-      gap:12px;
+    .modal-head{
+      padding:14px 16px;
+      border-bottom:1px solid var(--border);
+      display:flex; justify-content:space-between; align-items:center; gap:10px;
     }
-    .modalHead h4{
-      margin:0;
-      font-family:'Playfair Display', serif;
-      color: var(--plum);
-      font-size: 18px;
-      letter-spacing:.3px;
-    }
-    .modalHead p{
-      margin:6px 0 0;
-      color: var(--muted);
-      font-size: 13px;
-      line-height:1.5;
-    }
-    .close{
-      border:0;
-      background: rgba(34,27,43,.06);
-      color: var(--ink);
-      font-weight:900;
-      border-radius: 12px;
-      width: 40px;
-      height: 40px;
-      cursor:pointer;
-      transition:.2s;
-    }
-    .close:hover{ background: rgba(34,27,43,.10); }
-    .modalBody{
-      padding: 14px 16px 16px;
-      display:grid;
-      gap: 12px;
-    }
+    .modal-head b{font-size:14px}
+    .x{background:transparent; border:0; color:var(--muted); font-size:22px; cursor:pointer}
+    .modal-body{padding:16px}
     .form{
       display:grid;
-      gap: 12px;
-    }
-    .row{
-      display:grid;
       grid-template-columns: 1fr 1fr;
-      gap:10px;
+      gap:12px;
     }
-    .field label{
-      display:block;
-      font-size:12px;
-      color: var(--muted);
-      font-weight:900;
-      margin: 0 0 6px;
-    }
-    .field input, .field select, .field textarea{
+    .field{display:flex; flex-direction:column; gap:6px}
+    label{font-size:12px; color:var(--muted)}
+    input, select, textarea{
       width:100%;
-      border-radius: 14px;
-      border: 1px solid rgba(34,27,43,.12);
-      padding: 12px 12px;
-      font-family:'Poppins', sans-serif;
+      padding:12px 12px;
+      border-radius: 12px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
       outline:none;
-      background:#fff;
     }
-    .field textarea{ min-height: 80px; resize: vertical; }
-    .field input:focus, .field select:focus, .field textarea:focus{
-      border-color: rgba(184,138,68,.35);
-      box-shadow: 0 0 0 4px rgba(184,138,68,.12);
+    textarea{min-height:96px; resize:vertical}
+    .full{grid-column: 1 / -1}
+    .modal-foot{
+      display:flex; gap:10px; justify-content:flex-end; flex-wrap:wrap;
+      padding:14px 16px;
+      border-top:1px solid var(--border);
+      background: rgba(0,0,0,.15);
     }
-    .actions{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      align-items:center;
-      justify-content:flex-start;
-      margin-top: 2px;
+    .hint{font-size:12px; color:var(--muted); margin-top:8px; line-height:1.5}
+
+    /* Floating WhatsApp */
+    .float-ws{
+      position:fixed; right:16px; bottom:16px; z-index:40;
     }
 
-    /* Mobile */
-    @media (max-width: 980px){
-      .heroInner{ grid-template-columns: 1fr; }
-      .grid{ grid-template-columns: repeat(2, 1fr); }
-      nav{ justify-content:flex-start; }
-    }
-    @media (max-width: 560px){
-      .head{
-        flex-direction:column;
-        align-items:center;
-        gap:12px;
-        padding: 10px 0;
-      }
-      .brand{
-        width:100%;
-        justify-content:center;
-        text-align:center;
-        min-width:auto;
-      }
-      .logoWrap{
-        width:110px;
-        height:110px;
-        border-radius:30px;
-      }
-      .logoWrap img{ width:90%; height:90%; }
-      nav{
-        width:100%;
-        justify-content:center;
-        gap:8px;
-      }
-      .heroInner{ padding: 18px; }
-      .row{ grid-template-columns: 1fr; }
+    footer{padding:22px 0 28px; color:var(--muted); font-size:12px}
+
+    @media (max-width: 900px){
+      .hero-grid{grid-template-columns: 1fr}
+      .grid{grid-template-columns: 1fr}
+      .form{grid-template-columns: 1fr}
+      h1{font-size:26px}
+      .brand img{width:44px; height:44px}
     }
   </style>
 </head>
 
 <body>
-  <div class="bg"></div>
-
-  <!-- HEADER -->
-  <header>
-    <div class="container">
-      <div class="head">
-        <div class="brand">
-          <div class="logoWrap">
-            <!-- Letak logo.png bersama index.html -->
-            <img src="logo.png" alt="Rara Zahra Logo">
-          </div>
-          <div>
-            <p class="brandTitle">Rara Zahra Empire Beauty</p>
-            <div class="brandSub">Extra Luxury • Spa &amp; Salon • Booking WhatsApp</div>
-          </div>
+  <div class="nav">
+    <div class="container nav-inner">
+      <div class="brand">
+        <!-- Pastikan logo betul-betul ada di: assets/logo.png -->
+        <img src="assets/logo.png" alt="Logo" onerror="this.style.display='none'">
+        <div class="title">
+          <b>Rara Zahra Empire Beauty</b>
+          <span>Booking & Produk • Auto WhatsApp</span>
         </div>
+      </div>
 
-        <nav>
-          <a href="#services">Servis</a>
-          <a href="#packages">Pakej</a>
-          <a href="#contact">Hubungi</a>
-          <button class="btn btnWa" type="button" id="openBookingTop">Booking Slot</button>
-        </nav>
+      <div class="nav-actions">
+        <button class="btn" id="btnWS">WhatsApp</button>
+        <button class="btn primary" id="btnBookTop">Booking Sekarang</button>
       </div>
     </div>
-  </header>
-
-  <main>
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container">
-        <div class="heroCard">
-          <div class="heroInner">
-            <div>
-              <div class="tag">Luxury Experience • Private &amp; Comfortable</div>
-              <h1>Tempah Slot Cantik &amp; Mudah.<br/>Terus WhatsApp.</h1>
-              <p>
-                Klik <b>Booking Slot</b>, pilih tarikh, masa dan jenis rawatan.
-                Sistem akan sediakan mesej WhatsApp automatik untuk anda.
-              </p>
-              <div class="heroActions">
-                <button class="btn btnWa" type="button" id="openBookingHero">Booking Slot</button>
-                <button class="btn btnGold" type="button" id="openAskHero">Tanya Servis</button>
-              </div>
-            </div>
-
-            <div class="heroSide">
-              <h3>Signature Promise</h3>
-              <div class="list">
-                <div class="li"><div class="tick">✓</div><div class="t"><strong>Mobile Friendly</strong> — header kemas, logo besar.</div></div>
-                <div class="li"><div class="tick">✓</div><div class="t"><strong>Auto WhatsApp</strong> — mesej siap ikut form.</div></div>
-                <div class="li"><div class="tick">✓</div><div class="t"><strong>Premium Look</strong> — vibe extra luxury.</div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section id="services">
-      <div class="container">
-        <div class="secHead">
-          <div>
-            <h2 class="secTitle">Servis Popular</h2>
-            <p class="secSub">Klik “Book / WhatsApp” untuk terus chat nombor WhatsApp (auto).</p>
-          </div>
-        </div>
-
-        <div class="grid">
-          <div class="card">
-            <div class="pill">Urutan</div>
-            <div class="svcTitle">Urutan Tradisional Melayu</div>
-            <p class="svcText">Legakan lenguh badan, penat, stress & stamina.</p>
-            <div class="priceRow">
-              <div class="price">From RM 100</div>
-              <button class="btn btnGold" type="button" data-ws="Saya berminat dengan Urutan Tradisional Melayu.">WhatsApp</button>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="pill">Terapi</div>
-            <div class="svcTitle">Bertungku</div>
-            <p class="svcText">Relaksasi & rasa ringan (ikut kesesuaian).</p>
-            <div class="priceRow">
-              <div class="price">From RM 80</div>
-              <button class="btn btnGold" type="button" data-ws="Saya berminat dengan rawatan Bertungku.">WhatsApp</button>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="pill">Wajah</div>
-            <div class="svcTitle">Facial</div>
-            <p class="svcText">Kulit lebih bersih, segar & glowing.</p>
-            <div class="priceRow">
-              <div class="price">From RM 60</div>
-              <button class="btn btnGold" type="button" data-ws="Saya berminat dengan Facial.">WhatsApp</button>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="pill">Ritual</div>
-            <div class="svcTitle">Bertangas</div>
-            <p class="svcText">Ritual tradisional untuk keselesaan & relaksasi.</p>
-            <div class="priceRow">
-              <div class="price">From RM 90</div>
-              <button class="btn btnGold" type="button" data-ws="Saya berminat dengan Bertangas.">WhatsApp</button>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="pill">Body Care</div>
-            <div class="svcTitle">Skrub Badan</div>
-            <p class="svcText">Buang sel kulit mati, kulit terasa halus.</p>
-            <div class="priceRow">
-              <div class="price">From RM 70</div>
-              <button class="btn btnGold" type="button" data-ws="Saya berminat dengan Skrub Badan.">WhatsApp</button>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="pill">Salon</div>
-            <div class="svcTitle">Manicure &amp; Pedicure</div>
-            <p class="svcText">Kuku lebih kemas & rapi, tampil elegan.</p>
-            <div class="priceRow">
-              <div class="price">From RM 50</div>
-              <button class="btn btnGold" type="button" data-ws="Saya berminat dengan Manicure & Pedicure.">WhatsApp</button>
-            </div>
-          </div>
-        </div>
-
-        <div style="margin-top:14px; display:flex; gap:12px; flex-wrap:wrap;">
-          <button class="btn btnWa" type="button" id="openBookingServices">Booking Slot</button>
-          <button class="btn btnGold" type="button" id="openAskServices">Tanya Servis</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- PACKAGES -->
-    <section id="packages">
-      <div class="container">
-        <div class="frame">
-          <div class="frameCap">Pakej Extra Luxury</div>
-          <h3>Cadangan Pakej</h3>
-          <ul class="checks">
-            <li><b>Pakej Relax</b> — Urutan + Bertungku</li>
-            <li><b>Pakej Glow</b> — Facial + Skrub Badan</li>
-            <li><b>Pakej Ritual</b> — Bertangas + Urutan Tradisional</li>
-          </ul>
-
-          <div style="margin-top:14px; display:flex; gap:12px; flex-wrap:wrap;">
-            <button class="btn btnWa" type="button" id="openBookingPackages">Booking Slot</button>
-            <button class="btn btnGold" type="button" id="openAskPackages">Tanya Pakej</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact">
-      <div class="container">
-        <div class="frame">
-          <div class="frameCap">Hubungi Kami</div>
-          <h3>WhatsApp: +6011-1491 7935</h3>
-          <ul class="checks">
-            <li>Booking: tarikh + masa + rawatan</li>
-            <li>Respon pantas melalui WhatsApp</li>
-          </ul>
-          <div style="margin-top:14px; display:flex; gap:12px; flex-wrap:wrap;">
-            <button class="btn btnWa" type="button" id="openBookingContact">Booking Slot</button>
-            <button class="btn btnGold" type="button" id="openAskContact">Tanya Servis</button>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <div class="foot">
-        <div>&copy; <span id="year"></span> <span class="gold">Rara Zahra Empire Beauty</span></div>
-        <div style="opacity:.9;">Extra Luxury • Mobile Friendly</div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Floating WhatsApp -->
-  <div class="waFloat" id="waFloat" title="Booking / WhatsApp">
-    <svg viewBox="0 0 32 32" aria-hidden="true">
-      <path d="M19.11 17.2c-.27-.14-1.58-.78-1.83-.87-.25-.09-.43-.14-.61.14-.18.27-.7.87-.86 1.05-.16.18-.32.2-.59.07-.27-.14-1.14-.42-2.18-1.34-.81-.72-1.35-1.6-1.51-1.87-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.48-.84-2.02-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.98 2.63 1.12 2.82c.14.18 1.92 2.93 4.65 4.1.65.28 1.15.45 1.54.57.65.21 1.25.18 1.72.11.52-.08 1.58-.64 1.8-1.26.22-.62.22-1.15.16-1.26-.07-.11-.25-.18-.52-.32zM16.02 3C9.4 3 4.02 8.38 4.02 15c0 2.31.66 4.47 1.81 6.31L4 29l7.86-1.79c1.78.97 3.82 1.53 5.99 1.53 6.62 0 12-5.38 12-12S22.64 3 16.02 3zm0 23.56c-2.05 0-3.96-.6-5.58-1.62l-.4-.25-4.66 1.06 1.01-4.54-.26-.42A10.43 10.43 0 0 1 5.59 15c0-5.75 4.68-10.43 10.43-10.43S26.45 9.25 26.45 15 21.77 25.56 16.02 25.56z"/>
-    </svg>
   </div>
 
-  <!-- Booking Modal -->
-  <div class="modalBg" id="modal">
-    <div class="modal" role="dialog" aria-modal="true" aria-label="Booking Form">
-      <div class="modalHead">
-        <div>
-          <h4 id="modalTitle">Booking Slot</h4>
-          <p id="modalDesc">Isi tarikh, masa & jenis rawatan. Tekan “Hantar ke WhatsApp”.</p>
+  <main class="container">
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="card hero-card">
+          <div class="kicker">✨ Servis profesional • 📅 Booking mudah • 💬 Auto WhatsApp</div>
+          <h1>Tempah slot rawatan & pilih produk anda.</h1>
+          <p class="lead">
+            Isi nama + pilih tarikh (calendar) + pilih produk/jenis rawatan.
+            Lepas confirm, mesej terus auto-generate ke WhatsApp admin.
+          </p>
+
+          <div class="hero-cta">
+            <button class="btn primary" id="btnBookHero">Booking Slot</button>
+            <a class="btn" href="#produk">Lihat Produk</a>
+          </div>
+
+          <div class="hint">
+            *Anda boleh tukar semua konten produk ikut “konten dalam gambar” dengan edit senarai produk di bawah (bahagian <b>PRODUCTS</b> dalam script).
+          </div>
         </div>
-        <button class="close" id="modalClose" aria-label="Close">✕</button>
+
+        <div class="card side-card">
+          <h3>Info Ringkas</h3>
+          <ul class="bullets">
+            <li>Booking: tarikh calendar + nama</li>
+            <li>Pilih produk / jenis rawatan</li>
+            <li>Auto WhatsApp ke admin: <b>+6011-14917935</b></li>
+            <li>Mobile friendly (majoriti user phone)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="produk">
+      <h2>Produk / Rawatan</h2>
+      <div class="grid" id="productGrid"></div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Rara Zahra Empire Beauty • Powered by WhatsApp Booking
+    </footer>
+  </main>
+
+  <!-- Floating WhatsApp -->
+  <div class="float-ws">
+    <button class="btn primary" id="btnWSFloat">WhatsApp Admin</button>
+  </div>
+
+  <!-- Modal Booking -->
+  <div class="modal-wrap" id="modalWrap" aria-hidden="true">
+    <div class="modal" id="modal">
+      <div class="modal-head">
+        <b>Booking Slot (Auto WhatsApp)</b>
+        <button class="x" id="closeModal" aria-label="Close">×</button>
       </div>
 
-      <div class="modalBody">
-        <!-- QUICK -->
-        <div class="form" id="quick">
-          <button class="btn btnWa" type="button" id="goBooking">Booking Slot</button>
-          <button class="btn btnGold" type="button" id="goAsk">Tanya Servis</button>
-        </div>
-
-        <!-- BOOKING -->
-        <div class="form" id="booking" style="display:none;">
-          <div class="row">
+      <div class="modal-body">
+        <form id="bookingForm">
+          <div class="form">
             <div class="field">
               <label>Nama</label>
-              <input id="bkName" type="text" placeholder="Contoh: Nur Aina">
+              <input id="custName" type="text" placeholder="Contoh: Nur Aina" required />
             </div>
+
             <div class="field">
-              <label>No Telefon (optional)</label>
-              <input id="bkPhone" type="tel" placeholder="Contoh: 01x-xxxxxxx">
+              <label>Tarikh (Calendar)</label>
+              <input id="bookDate" type="date" required />
+            </div>
+
+            <div class="field full">
+              <label>Pilih Produk / Jenis Rawatan</label>
+              <select id="serviceSelect" required></select>
+            </div>
+
+            <div class="field full">
+              <label>Nota (optional)</label>
+              <textarea id="notes" placeholder="Contoh: Nak slot petang / pertama kali buat rawatan"></textarea>
             </div>
           </div>
 
-          <div class="row">
-            <div class="field">
-              <label>Tarikh</label>
-              <input id="bkDate" type="date">
-            </div>
-            <div class="field">
-              <label>Masa</label>
-              <input id="bkTime" type="time">
-            </div>
+          <div class="hint">
+            Bila anda tekan <b>Confirm Booking</b>, website akan buka WhatsApp dan isi mesej siap untuk dihantar.
           </div>
 
-          <div class="field">
-            <label>Jenis Rawatan</label>
-            <select id="bkService">
-              <option value="">-- Pilih rawatan --</option>
-              <option>Urutan Tradisional Melayu</option>
-              <option>Urutan Saraf</option>
-              <option>Urutan Ibu Hamil</option>
-              <option>Urutan Bayi</option>
-              <option>Bertungku</option>
-              <option>Bertangas</option>
-              <option>Facial</option>
-              <option>Skrub Badan</option>
-              <option>Manicure & Pedicure</option>
-              <option>Hair Salon</option>
-              <option>Pakej Relax (Urutan + Bertungku)</option>
-              <option>Pakej Glow (Facial + Skrub)</option>
-              <option>Pakej Ritual (Bertangas + Urutan)</option>
-            </select>
+          <div class="modal-foot">
+            <button type="button" class="btn" id="btnCancel">Batal</button>
+            <button type="submit" class="btn primary">Confirm Booking</button>
           </div>
-
-          <div class="field">
-            <label>Nota (optional)</label>
-            <textarea id="bkNote" placeholder="Contoh: nak slot awal / ada sakit belakang / dll"></textarea>
-          </div>
-
-          <div class="actions">
-            <button class="btn btnWa" type="button" id="bkSend">Hantar ke WhatsApp</button>
-            <button class="btn btnGold" type="button" id="backFromBooking">Kembali</button>
-          </div>
-        </div>
-
-        <!-- ASK -->
-        <div class="form" id="ask" style="display:none;">
-          <div class="field">
-            <label>Mesej</label>
-            <textarea id="askText" placeholder="Hi, saya nak tanya servis yang sesuai untuk saya..."></textarea>
-          </div>
-          <div class="actions">
-            <button class="btn btnWa" type="button" id="askSend">Hantar ke WhatsApp</button>
-            <button class="btn btnGold" type="button" id="backFromAsk">Kembali</button>
-          </div>
-        </div>
-
+        </form>
       </div>
     </div>
   </div>
 
   <script>
-    // ✅ SEMUA AUTO WHATSAPP GUNA NO INI SAHAJA
-    // Format wa.me: TANPA '+' dan TANPA '-' (digits only)
-    const WA_NUMBER = "601114917935"; // +6011-14917935
+    // =========================
+    // SETTINGS
+    // =========================
+    const WHATSAPP_NUMBER = "601114917935"; // tanpa '+'
 
+    // =========================
+    // PRODUCTS (EDIT ikut konten dalam gambar awak)
+    // Tukar tajuk, desc, harga, tag, gambar.
+    // Gambar letak dalam folder assets/ dan ubah filename.
+    // =========================
+    const PRODUCTS = [
+      {
+        id: "p1",
+        title: "Pakej Rawatan 1 (Edit ikut gambar)",
+        desc: "Letak description produk/rawatan ikut konten dari gambar anda.",
+        price: "RM 100 - RM 150",
+        tag: "Popular",
+        img: "assets/product-1.jpg"
+      },
+      {
+        id: "p2",
+        title: "Pakej Rawatan 2 (Edit ikut gambar)",
+        desc: "Masukkan benefit/point penting dari gambar produk anda.",
+        price: "RM 150 - RM 250",
+        tag: "Best Value",
+        img: "assets/product-2.jpg"
+      },
+      {
+        id: "p3",
+        title: "Pakej Rawatan 3 (Edit ikut gambar)",
+        desc: "Tukar ikut produk sebenar. Boleh letak promo / add-on.",
+        price: "RM 250+",
+        tag: "Premium",
+        img: "assets/product-3.jpg"
+      }
+    ];
+
+    // =========================
+    // RENDER PRODUCTS
+    // =========================
+    const grid = document.getElementById("productGrid");
+    const serviceSelect = document.getElementById("serviceSelect");
+
+    function renderProducts(){
+      grid.innerHTML = "";
+      serviceSelect.innerHTML = "";
+
+      PRODUCTS.forEach((p, idx) => {
+        // product card
+        const card = document.createElement("div");
+        card.className = "card p-card";
+        card.innerHTML = `
+          <div class="p-img">
+            <img src="${p.img}" alt="${escapeHtml(p.title)}" onerror="this.style.display='none'">
+          </div>
+          <div class="p-body">
+            <p class="p-title">${escapeHtml(p.title)}</p>
+            <p class="p-desc">${escapeHtml(p.desc)}</p>
+            <div class="p-foot">
+              <span class="price">${escapeHtml(p.price)}</span>
+              <span class="tag">${escapeHtml(p.tag)}</span>
+            </div>
+            <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+              <button class="btn primary" onclick="openBooking('${p.id}')">Booking</button>
+              <button class="btn" onclick="wsEnquiry('${p.id}')">Tanya WhatsApp</button>
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+
+        // select option
+        const opt = document.createElement("option");
+        opt.value = p.id;
+        opt.textContent = `${p.title} • ${p.price}`;
+        if(idx === 0) opt.selected = true;
+        serviceSelect.appendChild(opt);
+      });
+    }
+
+    // =========================
+    // MODAL CONTROL
+    // =========================
+    const modalWrap = document.getElementById("modalWrap");
     const modal = document.getElementById("modal");
-    const modalClose = document.getElementById("modalClose");
-    const modalTitle = document.getElementById("modalTitle");
-    const modalDesc = document.getElementById("modalDesc");
 
-    const quick = document.getElementById("quick");
-    const booking = document.getElementById("booking");
-    const ask = document.getElementById("ask");
-
-    // Booking fields
-    const bkName = document.getElementById("bkName");
-    const bkPhone = document.getElementById("bkPhone");
-    const bkDate = document.getElementById("bkDate");
-    const bkTime = document.getElementById("bkTime");
-    const bkService = document.getElementById("bkService");
-    const bkNote = document.getElementById("bkNote");
-
-    // Ask
-    const askText = document.getElementById("askText");
-
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // Min date = today
-    const today = new Date();
-    const yyyy = today.getFullYear();
-    const mm = String(today.getMonth()+1).padStart(2,'0');
-    const dd = String(today.getDate()).padStart(2,'0');
-    bkDate.min = `${yyyy}-${mm}-${dd}`;
-
-    function openModal(){
-      modal.style.display = "flex";
-      showQuick();
+    function showModal(){
+      modalWrap.style.display = "flex";
+      requestAnimationFrame(() => {
+        modal.style.opacity = "1";
+        modal.style.transform = "translateY(0)";
+      });
+      modalWrap.setAttribute("aria-hidden","false");
     }
-    function closeModal(){ modal.style.display = "none"; }
+    function hideModal(){
+      modal.style.opacity = "0";
+      modal.style.transform = "translateY(10px)";
+      setTimeout(() => {
+        modalWrap.style.display = "none";
+        modalWrap.setAttribute("aria-hidden","true");
+      }, 150);
+    }
 
-    function showQuick(){
-      modalTitle.textContent = "WhatsApp Menu";
-      modalDesc.textContent = "Pilih Booking Slot atau Tanya Servis.";
-      quick.style.display = "grid";
-      booking.style.display = "none";
-      ask.style.display = "none";
+    // Open booking with preselected product
+    window.openBooking = function(productId){
+      if(productId){
+        serviceSelect.value = productId;
+      }
+      showModal();
+      // auto set min date today
+      const today = new Date();
+      const yyyy = today.getFullYear();
+      const mm = String(today.getMonth()+1).padStart(2,'0');
+      const dd = String(today.getDate()).padStart(2,'0');
+      document.getElementById("bookDate").min = `${yyyy}-${mm}-${dd}`;
     }
-    function showBooking(){
-      modalTitle.textContent = "Booking Slot";
-      modalDesc.textContent = "Isi tarikh, masa & jenis rawatan. Tekan “Hantar ke WhatsApp”.";
-      quick.style.display = "none";
-      booking.style.display = "grid";
-      ask.style.display = "none";
-    }
-    function showAsk(){
-      modalTitle.textContent = "Tanya Servis";
-      modalDesc.textContent = "Tulis mesej ringkas dan terus WhatsApp.";
-      quick.style.display = "none";
-      booking.style.display = "none";
-      ask.style.display = "grid";
-      setTimeout(()=>askText.focus(), 50);
+
+    // Quick WhatsApp enquiry
+    window.wsEnquiry = function(productId){
+      const p = PRODUCTS.find(x => x.id === productId) || PRODUCTS[0];
+      const text =
+`Assalamualaikum admin Rara Zahra Empire Beauty.
+Saya nak tanya pasal:
+• ${p.title}
+• Harga: ${p.price}
+
+Boleh bagi details ya.`;
+      openWhatsApp(text);
     }
 
     function openWhatsApp(message){
-      const text = encodeURIComponent(message);
-      window.open(`https://wa.me/${WA_NUMBER}?text=${text}`, "_blank");
+      const encoded = encodeURIComponent(message);
+      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`;
+      window.open(url, "_blank");
     }
 
-    // All open buttons
-    ["openBookingTop","openBookingHero","openBookingServices","openBookingPackages","openBookingContact"]
-      .forEach(id => document.getElementById(id).addEventListener("click", ()=>{ openModal(); showBooking(); }));
+    // =========================
+    // FORM SUBMIT => AUTO WHATSAPP
+    // =========================
+    document.getElementById("bookingForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const name = document.getElementById("custName").value.trim();
+      const date = document.getElementById("bookDate").value;
+      const notes = document.getElementById("notes").value.trim();
+      const serviceId = serviceSelect.value;
 
-    ["openAskHero","openAskServices","openAskPackages","openAskContact"]
-      .forEach(id => document.getElementById(id).addEventListener("click", ()=>{ openModal(); showAsk(); }));
-
-    // Floating
-    document.getElementById("waFloat").addEventListener("click", openModal);
-
-    // Modal close
-    modalClose.addEventListener("click", closeModal);
-    modal.addEventListener("click", (e)=>{ if(e.target === modal) closeModal(); });
-    window.addEventListener("keydown", (e)=>{ if(e.key === "Escape") closeModal(); });
-
-    // Quick menu
-    document.getElementById("goBooking").addEventListener("click", showBooking);
-    document.getElementById("goAsk").addEventListener("click", showAsk);
-
-    // Back
-    document.getElementById("backFromBooking").addEventListener("click", showQuick);
-    document.getElementById("backFromAsk").addEventListener("click", showQuick);
-
-    // Booking submit
-    document.getElementById("bkSend").addEventListener("click", ()=>{
-      const name = bkName.value.trim() || "-";
-      const phone = bkPhone.value.trim() || "-";
-      const date = bkDate.value || "";
-      const time = bkTime.value || "";
-      const service = bkService.value || "";
-      const note = bkNote.value.trim() || "-";
-
-      if(!date || !time || !service){
-        alert("Sila pilih: Tarikh, Masa & Jenis Rawatan.");
-        return;
-      }
+      const p = PRODUCTS.find(x => x.id === serviceId) || PRODUCTS[0];
+      const niceDate = formatDate(date);
 
       const msg =
-`Hi Rara Zahra Empire Beauty, saya nak BOOKING SLOT.
+`Assalamualaikum admin Rara Zahra Empire Beauty.
+Saya nak booking slot:
+
 Nama: ${name}
-No Telefon: ${phone}
-Tarikh: ${date}
-Masa: ${time}
-Jenis Rawatan: ${service}
-Nota: ${note}`;
+Tarikh: ${niceDate}
+Produk/Rawatan: ${p.title}
+Harga: ${p.price}
+Nota: ${notes ? notes : "-"}
+
+Terima kasih.`;
 
       openWhatsApp(msg);
+      hideModal();
     });
 
-    // Ask submit
-    document.getElementById("askSend").addEventListener("click", ()=>{
-      const msg = askText.value.trim() || "Hi Rara Zahra Empire Beauty, saya nak tanya servis yang sesuai untuk saya. Boleh bantu?";
-      openWhatsApp(msg);
+    function formatDate(iso){
+      // iso: YYYY-MM-DD
+      if(!iso) return "-";
+      const [y,m,d] = iso.split("-").map(x=>parseInt(x,10));
+      const dt = new Date(y, (m-1), d);
+      // Malay-ish simple
+      const months = ["Jan","Feb","Mac","Apr","Mei","Jun","Jul","Ogos","Sep","Okt","Nov","Dis"];
+      return `${d} ${months[m-1]} ${y}`;
+    }
+
+    function escapeHtml(s){
+      return String(s)
+        .replaceAll("&","&amp;")
+        .replaceAll("<","&lt;")
+        .replaceAll(">","&gt;")
+        .replaceAll('"',"&quot;")
+        .replaceAll("'","&#039;");
+    }
+
+    // Buttons
+    document.getElementById("btnBookTop").addEventListener("click", () => openBooking(PRODUCTS[0]?.id));
+    document.getElementById("btnBookHero").addEventListener("click", () => openBooking(PRODUCTS[0]?.id));
+    document.getElementById("btnCancel").addEventListener("click", hideModal);
+    document.getElementById("closeModal").addEventListener("click", hideModal);
+    modalWrap.addEventListener("click", (e) => { if(e.target === modalWrap) hideModal(); });
+
+    document.getElementById("btnWS").addEventListener("click", () => {
+      openWhatsApp("Assalamualaikum admin, saya nak tanya pasal servis/produk Rara Zahra Empire Beauty.");
+    });
+    document.getElementById("btnWSFloat").addEventListener("click", () => {
+      openWhatsApp("Assalamualaikum admin, saya nak booking/tanya pasal servis Rara Zahra Empire Beauty.");
     });
 
-    // Service cards WhatsApp buttons (data-ws)
-    document.querySelectorAll("[data-ws]").forEach(btn=>{
-      btn.addEventListener("click", ()=>{
-        const text = btn.getAttribute("data-ws") || "Hi, saya nak tanya servis.";
-        openWhatsApp(`Hi Rara Zahra Empire Beauty, ${text}`);
-      });
-    });
+    // init
+    document.getElementById("year").textContent = new Date().getFullYear();
+    renderProducts();
   </script>
 </body>
 </html>
