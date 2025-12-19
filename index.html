@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rara Zahra Empire Beauty • Spa & Salon</title>
 
+  <!-- Premium Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
   <style>
@@ -36,6 +37,7 @@
       color: var(--ink);
     }
 
+    /* Soft luxury background */
     .bg-veil{
       position:fixed;
       inset:-140px;
@@ -52,6 +54,7 @@
       margin-inline:auto;
     }
 
+    /* ===== Header ===== */
     header{
       position:sticky;
       top:0;
@@ -76,6 +79,7 @@
       min-width: 280px;
     }
 
+    /* Logo */
     .logo-badge{
       width:72px;
       height:72px;
@@ -151,6 +155,7 @@
       color:#fff;
     }
     .btn-wa:hover{ background: var(--wa2); }
+
     .btn-ghost{
       background: rgba(184,138,68,.10);
       color: var(--plum);
@@ -158,6 +163,7 @@
     }
     .btn-ghost:hover{ background: rgba(184,138,68,.16); }
 
+    /* ===== Hero ===== */
     .hero{ padding: 26px 0 18px; }
     .hero-card{
       background: linear-gradient(135deg, rgba(247,239,255,.95), rgba(255,255,255,.92));
@@ -397,7 +403,7 @@
     }
     .gold{ color: var(--gold); font-weight:900; }
 
-    /* ===== Floating WhatsApp + Popup ===== */
+    /* ===== Floating WhatsApp ===== */
     .wa-float{
       position: fixed;
       right: 18px;
@@ -417,6 +423,7 @@
     .wa-float:hover{ background: var(--wa2); transform: translateY(-2px); }
     .wa-float svg{ width:28px; height:28px; fill:#fff; }
 
+    /* ===== Modal ===== */
     .modal-backdrop{
       position: fixed;
       inset: 0;
@@ -438,6 +445,7 @@
       animation: pop .18s ease-out forwards;
     }
     @keyframes pop{ to{ transform: translateY(0); } }
+
     .modal-head{
       padding: 16px 16px 12px;
       background: linear-gradient(135deg, rgba(247,239,255,.95), rgba(255,255,255,.92));
@@ -479,47 +487,10 @@
       gap: 12px;
     }
 
-    /* Quick menu */
-    .quick{
-      display:grid;
-      gap:10px;
-    }
-    .quick button{
-      width:100%;
-      text-align:left;
-      padding: 12px 12px;
-      border-radius: 16px;
-      border: 1px solid rgba(35,31,43,.10);
-      background: #fff;
-      cursor:pointer;
-      transition:.2s;
-      font-weight:800;
-      color: var(--plum);
-    }
-    .quick button:hover{
-      border-color: rgba(184,138,68,.30);
-      background: rgba(247,239,255,.55);
-    }
-    .quick small{
-      display:block;
-      margin-top:4px;
-      font-weight:600;
-      color: var(--muted);
-    }
-
     /* Booking form */
     .form{
-      border-top: 1px solid rgba(35,31,43,.08);
-      padding-top: 12px;
       display:grid;
       gap: 12px;
-    }
-    .form-title{
-      font-weight:900;
-      color: var(--plum);
-      font-size: 13px;
-      letter-spacing:.2px;
-      margin:0;
     }
     .row{
       display:grid;
@@ -543,7 +514,6 @@
       background:#fff;
     }
     .field textarea{ min-height: 80px; resize: vertical; }
-
     .field input:focus, .field select:focus, .field textarea:focus{
       border-color: rgba(184,138,68,.35);
       box-shadow: 0 0 0 4px rgba(184,138,68,.12);
@@ -564,7 +534,6 @@
       .grid{ grid-template-columns: repeat(2, 1fr); }
       nav{ justify-content:flex-start; }
     }
-
     @media (max-width: 560px){
       .head-wrap{
         flex-direction:column;
@@ -572,15 +541,14 @@
         gap:12px;
         padding: 10px 0;
       }
-
       .brand{
         width:100%;
         justify-content:center;
         text-align:center;
-        min-width: auto;
+        min-width:auto;
       }
 
-      /* bigger logo for phone */
+      /* Bigger logo for mobile */
       .logo-badge{
         width:104px;
         height:104px;
@@ -596,7 +564,6 @@
         justify-content:center;
         gap:8px;
       }
-
       .hero-inner{ padding: 18px; }
       .row{ grid-template-columns: 1fr; }
     }
@@ -612,12 +579,13 @@
       <div class="head-wrap">
         <div class="brand">
           <div class="logo-badge">
+            <!-- IMPORTANT: logo name = logo.png -->
             <img src="logo.png" alt="Rara Zahra Logo">
           </div>
 
           <div class="brand-text">
             <p class="name">Rara Zahra Empire Beauty</p>
-            <div class="sub">Spa &amp; Salon • Sentuhan Tradisi, Keanggunan Moden</div>
+            <div class="sub">Spa &amp; Salon • Extra Luxury Experience</div>
           </div>
         </div>
 
@@ -625,7 +593,7 @@
           <a href="#perkhidmatan">Perkhidmatan</a>
           <a href="#kenapa">Kenapa Kami</a>
           <a href="#hubungi">Hubungi</a>
-          <button class="btn btn-wa" type="button" id="openWhatsAppTop">WhatsApp</button>
+          <button class="btn btn-wa" type="button" id="openBookingTop">Booking Slot</button>
         </nav>
       </div>
     </div>
@@ -638,16 +606,16 @@
         <div class="hero-card">
           <div class="hero-inner">
             <div>
-              <div class="badge">Extra Luxury • Premium Experience</div>
-              <h1>Booking Mudah,<br/>1 Klik WhatsApp.</h1>
+              <div class="badge">Extra Luxury • Premium Booking</div>
+              <h1>Tempah Slot Dengan Mudah,<br/>Terus WhatsApp.</h1>
               <p>
-                Tempah slot rawatan dengan cepat. Tekan <b>Booking Slot</b> untuk isi tarikh, masa
-                dan jenis rawatan — sistem akan sediakan mesej WhatsApp automatik.
+                Klik <b>Booking Slot</b>, pilih <b>tarikh (calendar)</b>, <b>masa</b> dan <b>jenis rawatan</b>.
+                Sistem akan sediakan mesej WhatsApp automatik.
               </p>
 
               <div class="hero-actions">
                 <button class="btn btn-wa" type="button" id="openBookingHero">Booking Slot</button>
-                <button class="btn btn-ghost" type="button" id="openWhatsAppHero">Tanya Servis</button>
+                <a class="btn btn-ghost" href="#perkhidmatan">Lihat Perkhidmatan</a>
               </div>
             </div>
 
@@ -656,15 +624,15 @@
               <div class="mini">
                 <div class="item">
                   <div class="tick">✓</div>
-                  <div class="text"><strong>Booking Form</strong> — tarikh & masa siap.</div>
+                  <div class="text"><strong>Booking Form</strong> — tarikh, masa & rawatan.</div>
                 </div>
                 <div class="item">
                   <div class="tick">✓</div>
-                  <div class="text"><strong>Jenis Rawatan</strong> — pilih dalam dropdown.</div>
+                  <div class="text"><strong>Auto WhatsApp</strong> — mesej terus siap.</div>
                 </div>
                 <div class="item">
                   <div class="tick">✓</div>
-                  <div class="text"><strong>Auto WhatsApp</strong> — mesej terus jadi.</div>
+                  <div class="text"><strong>Mobile Friendly</strong> — logo besar & kemas.</div>
                 </div>
               </div>
             </div>
@@ -680,7 +648,7 @@
         <div class="section-head">
           <div>
             <h2 class="section-title">Perkhidmatan Kami</h2>
-            <p class="section-sub">Senarai ringkas (penuh boleh dipilih dalam Booking Form).</p>
+            <p class="section-sub">Pilih rawatan dalam booking form untuk senarai lengkap.</p>
           </div>
         </div>
 
@@ -691,6 +659,11 @@
           <div class="card"><div class="svc"><div class="dot">✦</div><div><h4>Skrub Badan</h4><p>Buang sel kulit mati & halus.</p></div></div></div>
           <div class="card"><div class="svc"><div class="dot">✦</div><div><h4>Manicure & Pedicure</h4><p>Penampilan rapi & kemas.</p></div></div></div>
           <div class="card"><div class="svc"><div class="dot">✦</div><div><h4>Hair Salon</h4><p>Perkhidmatan rambut (wanita).</p></div></div></div>
+        </div>
+
+        <div style="margin-top:14px; display:flex; gap:12px; flex-wrap:wrap;">
+          <button class="btn btn-wa" type="button" id="openBookingServices">Booking Slot Sekarang</button>
+          <a class="btn btn-ghost" href="#hubungi">Hubungi</a>
         </div>
       </div>
     </section>
@@ -703,25 +676,26 @@
           <h3>Reason to Trust</h3>
           <ul class="checklist">
             <li>Harga <b>berpatutan</b> & telus.</li>
-            <li>Ruang <b>selesa</b> & kemas.</li>
-            <li>Booking <b>mudah</b> melalui WhatsApp.</li>
+            <li>Ruang <b>selesa</b> & privasi terjaga.</li>
+            <li>Kawasan <b>senang parking</b>.</li>
+            <li>Layanan <b>mesra & profesional</b>.</li>
           </ul>
 
           <div style="margin-top:14px; display:flex; gap:12px; flex-wrap:wrap;">
             <button class="btn btn-wa" type="button" id="openBookingWhy">Booking Slot</button>
-            <button class="btn btn-ghost" type="button" id="openWhatsAppWhy">Tanya Servis</button>
+            <a class="btn btn-ghost" href="#hubungi">Hubungi</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT -->
+    <!-- HUBUNGI -->
     <section id="hubungi">
       <div class="container">
         <div class="section-head">
           <div>
             <h2 class="section-title">Hubungi & Tempahan</h2>
-            <p class="section-sub">Tekan Booking Slot untuk isi form & terus WhatsApp.</p>
+            <p class="section-sub">Klik booking slot untuk hantar details terus ke WhatsApp.</p>
           </div>
         </div>
 
@@ -730,7 +704,7 @@
           <h3>011-1188 3531</h3>
           <div style="margin-top:14px; display:flex; gap:12px; flex-wrap:wrap;">
             <button class="btn btn-wa" type="button" id="openBookingContact">Booking Slot</button>
-            <button class="btn btn-ghost" type="button" id="openWhatsAppContact">Tanya Servis</button>
+            <button class="btn btn-ghost" type="button" id="openQuickAsk">Tanya Servis</button>
           </div>
         </div>
       </div>
@@ -739,62 +713,47 @@
 
   <footer>
     <div class="container">
-      <div class="foot" style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;">
+      <div class="foot">
         <div>&copy; <span id="year"></span> <span class="gold">Rara Zahra Empire Beauty</span></div>
-        <div style="opacity:.9;">Booking Form → WhatsApp Auto Message</div>
+        <div style="opacity:.9;">Extra Luxury • Mobile Friendly</div>
       </div>
     </div>
   </footer>
 
-  <!-- Floating WhatsApp Button -->
-  <div class="wa-float" id="waFloat" title="WhatsApp / Booking">
+  <!-- Floating WhatsApp -->
+  <div class="wa-float" id="waFloat" title="Booking Slot">
     <svg viewBox="0 0 32 32" aria-hidden="true">
       <path d="M19.11 17.2c-.27-.14-1.58-.78-1.83-.87-.25-.09-.43-.14-.61.14-.18.27-.7.87-.86 1.05-.16.18-.32.2-.59.07-.27-.14-1.14-.42-2.18-1.34-.81-.72-1.35-1.6-1.51-1.87-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.48-.84-2.02-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.98 2.63 1.12 2.82c.14.18 1.92 2.93 4.65 4.1.65.28 1.15.45 1.54.57.65.21 1.25.18 1.72.11.52-.08 1.58-.64 1.8-1.26.22-.62.22-1.15.16-1.26-.07-.11-.25-.18-.52-.32zM16.02 3C9.4 3 4.02 8.38 4.02 15c0 2.31.66 4.47 1.81 6.31L4 29l7.86-1.79c1.78.97 3.82 1.53 5.99 1.53 6.62 0 12-5.38 12-12S22.64 3 16.02 3zm0 23.56c-2.05 0-3.96-.6-5.58-1.62l-.4-.25-4.66 1.06 1.01-4.54-.26-.42A10.43 10.43 0 0 1 5.59 15c0-5.75 4.68-10.43 10.43-10.43S26.45 9.25 26.45 15 21.77 25.56 16.02 25.56z"/>
     </svg>
   </div>
 
-  <!-- MODAL (Booking & WhatsApp) -->
+  <!-- Booking Modal -->
   <div class="modal-backdrop" id="modal">
-    <div class="modal" role="dialog" aria-modal="true" aria-label="Booking Popup">
+    <div class="modal" role="dialog" aria-modal="true" aria-label="Booking Form">
       <div class="modal-head">
         <div>
-          <h4 id="modalTitle">Booking Slot</h4>
-          <p id="modalDesc">Isi tarikh, masa dan jenis rawatan. Kemudian tekan “Hantar ke WhatsApp”.</p>
+          <h4>Booking Slot</h4>
+          <p>Isi tarikh, masa & jenis rawatan. Tekan “Hantar ke WhatsApp”.</p>
         </div>
         <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
       </div>
 
       <div class="modal-body">
-        <!-- QUICK MENU -->
-        <div class="quick" id="quickMenu">
-          <button type="button" id="btnBooking">
-            Booking Slot
-            <small>Popup form tarikh & jenis rawatan</small>
-          </button>
-          <button type="button" id="btnAsk">
-            Tanya Servis
-            <small>Tulis mesej ringkas & terus WhatsApp</small>
-          </button>
-        </div>
-
-        <!-- BOOKING FORM -->
-        <div class="form" id="bookingForm" style="display:none;">
-          <p class="form-title">Maklumat Tempahan</p>
-
+        <div class="form">
           <div class="row">
             <div class="field">
               <label>Nama</label>
               <input id="bkName" type="text" placeholder="Contoh: Nur Aina" />
             </div>
             <div class="field">
-              <label>No. Telefon (optional)</label>
+              <label>No Telefon (optional)</label>
               <input id="bkPhone" type="tel" placeholder="Contoh: 01x-xxxxxxx" />
             </div>
           </div>
 
           <div class="row">
             <div class="field">
-              <label>Tarikh</label>
+              <label>Tarikh (Calendar)</label>
               <input id="bkDate" type="date" />
             </div>
             <div class="field">
@@ -832,28 +791,14 @@
 
           <div class="field">
             <label>Nota (optional)</label>
-            <textarea id="bkNote" placeholder="Contoh: saya ada sakit belakang / nak slot awal / dll"></textarea>
+            <textarea id="bkNote" placeholder="Contoh: saya nak slot awal / ada sakit belakang / dll"></textarea>
           </div>
 
           <div class="actions">
             <button class="btn btn-wa" type="button" id="bkSend">Hantar ke WhatsApp</button>
-            <button class="btn btn-ghost" type="button" id="bkBack">Kembali</button>
+            <button class="btn btn-ghost" type="button" id="bkAsk">Tanya Servis</button>
           </div>
         </div>
-
-        <!-- ASK SERVICE (simple message) -->
-        <div class="form" id="askBox" style="display:none;">
-          <p class="form-title">Tanya Servis</p>
-          <div class="field">
-            <label>Mesej</label>
-            <textarea id="askText" placeholder="Hi, saya nak tanya servis yang sesuai untuk saya..."></textarea>
-          </div>
-          <div class="actions">
-            <button class="btn btn-wa" type="button" id="askSend">Hantar ke WhatsApp</button>
-            <button class="btn btn-ghost" type="button" id="askBack">Kembali</button>
-          </div>
-        </div>
-
       </div>
     </div>
   </div>
@@ -863,23 +808,13 @@
 
     const modal = document.getElementById("modal");
     const modalClose = document.getElementById("modalClose");
-    const modalTitle = document.getElementById("modalTitle");
-    const modalDesc  = document.getElementById("modalDesc");
 
-    const quickMenu = document.getElementById("quickMenu");
-    const bookingForm = document.getElementById("bookingForm");
-    const askBox = document.getElementById("askBox");
-
-    // booking fields
     const bkName = document.getElementById("bkName");
     const bkPhone = document.getElementById("bkPhone");
     const bkDate = document.getElementById("bkDate");
     const bkTime = document.getElementById("bkTime");
     const bkService = document.getElementById("bkService");
     const bkNote = document.getElementById("bkNote");
-
-    // ask box
-    const askText = document.getElementById("askText");
 
     document.getElementById("year").innerText = new Date().getFullYear();
 
@@ -888,84 +823,42 @@
     const yyyy = today.getFullYear();
     const mm = String(today.getMonth()+1).padStart(2,'0');
     const dd = String(today.getDate()).padStart(2,'0');
-    const minDate = `${yyyy}-${mm}-${dd}`;
-    bkDate.min = minDate;
+    bkDate.min = `${yyyy}-${mm}-${dd}`;
 
-    function openModal(){
-      modal.style.display = "flex";
-      showQuick();
-    }
-    function closeModal(){
-      modal.style.display = "none";
-    }
-
-    function showQuick(){
-      modalTitle.textContent = "WhatsApp Menu";
-      modalDesc.textContent  = "Pilih Booking Slot atau Tanya Servis.";
-      quickMenu.style.display = "grid";
-      bookingForm.style.display = "none";
-      askBox.style.display = "none";
-    }
-
-    function showBooking(){
-      modalTitle.textContent = "Booking Slot";
-      modalDesc.textContent  = "Isi tarikh, masa dan jenis rawatan. Tekan “Hantar ke WhatsApp”.";
-      quickMenu.style.display = "none";
-      bookingForm.style.display = "grid";
-      askBox.style.display = "none";
-    }
-
-    function showAsk(){
-      modalTitle.textContent = "Tanya Servis";
-      modalDesc.textContent  = "Tulis mesej ringkas dan terus WhatsApp.";
-      quickMenu.style.display = "none";
-      bookingForm.style.display = "none";
-      askBox.style.display = "grid";
-      askText.focus();
-    }
+    function openModal(){ modal.style.display = "flex"; }
+    function closeModal(){ modal.style.display = "none"; }
 
     function openWhatsApp(message){
       const text = encodeURIComponent(message);
       window.open(`https://wa.me/${WA_NUMBER}?text=${text}`, "_blank");
     }
 
-    // Buttons that open modal
-    document.getElementById("openWhatsAppTop").addEventListener("click", openModal);
-    document.getElementById("openBookingHero").addEventListener("click", ()=>{ openModal(); showBooking(); });
-    document.getElementById("openWhatsAppHero").addEventListener("click", ()=>{ openModal(); showAsk(); });
-    document.getElementById("openBookingWhy").addEventListener("click", ()=>{ openModal(); showBooking(); });
-    document.getElementById("openWhatsAppWhy").addEventListener("click", ()=>{ openModal(); showAsk(); });
-    document.getElementById("openBookingContact").addEventListener("click", ()=>{ openModal(); showBooking(); });
-    document.getElementById("openWhatsAppContact").addEventListener("click", ()=>{ openModal(); showAsk(); });
-
-    // Floating button opens menu
+    // Open modal triggers
+    const openIds = ["openBookingTop","openBookingHero","openBookingServices","openBookingWhy","openBookingContact"];
+    openIds.forEach(id => document.getElementById(id).addEventListener("click", openModal));
     document.getElementById("waFloat").addEventListener("click", openModal);
 
-    // Close modal actions
+    // Quick ask button (send simple msg)
+    document.getElementById("openQuickAsk").addEventListener("click", ()=>{
+      openWhatsApp("Hi, saya nak tanya servis yang sesuai untuk saya. Boleh bantu?");
+    });
+
+    // Close modal
     modalClose.addEventListener("click", closeModal);
     modal.addEventListener("click", (e)=>{ if(e.target === modal) closeModal(); });
     window.addEventListener("keydown", (e)=>{ if(e.key === "Escape") closeModal(); });
 
-    // Quick menu actions
-    document.getElementById("btnBooking").addEventListener("click", showBooking);
-    document.getElementById("btnAsk").addEventListener("click", showAsk);
-
-    // Back buttons
-    document.getElementById("bkBack").addEventListener("click", showQuick);
-    document.getElementById("askBack").addEventListener("click", showQuick);
-
-    // Booking submit -> WhatsApp
+    // Submit booking -> WhatsApp
     document.getElementById("bkSend").addEventListener("click", ()=>{
       const name = bkName.value.trim() || "-";
       const phone = bkPhone.value.trim() || "-";
-      const date = bkDate.value || "-";
-      const time = bkTime.value || "-";
-      const service = bkService.value || "-";
+      const date = bkDate.value || "";
+      const time = bkTime.value || "";
+      const service = bkService.value || "";
       const note = bkNote.value.trim() || "-";
 
-      // Basic validation
-      if(service === "-" || date === "-" || time === "-"){
-        alert("Sila pilih: Tarikh, Masa & Jenis Rawatan.");
+      if(!date || !time || !service){
+        alert("Sila isi: Tarikh, Masa & Jenis Rawatan.");
         return;
       }
 
@@ -981,10 +874,9 @@ Nota: ${note}`;
       openWhatsApp(msg);
     });
 
-    // Ask submit -> WhatsApp
-    document.getElementById("askSend").addEventListener("click", ()=>{
-      const msg = askText.value.trim() || "Hi, saya nak tanya servis yang sesuai untuk saya. Boleh bantu?";
-      openWhatsApp(msg);
+    // Ask inside modal
+    document.getElementById("bkAsk").addEventListener("click", ()=>{
+      openWhatsApp("Hi, saya nak tanya servis yang sesuai untuk saya. Boleh bantu?");
     });
   </script>
 </body>
