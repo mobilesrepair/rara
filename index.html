@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ms">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rara Zahra Empire Beauty • Spa & Salon</title>
 
   <!-- Premium Fonts -->
@@ -13,365 +13,876 @@
       --bg:#ffffff;
       --ink:#231f2b;
       --muted:#6a6077;
+
+      --lav:#f7efff;
+      --lav2:#efe5ff;
+
       --gold:#b88a44;
       --plum:#6b2a5e;
+
+      --card:#ffffff;
+      --border: rgba(35,31,43,.10);
+      --shadow: 0 16px 50px rgba(20, 10, 40, .08);
+
       --wa:#25d366;
       --wa2:#128c7e;
     }
 
-    *{box-sizing:border-box}
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
     body{
       margin:0;
-      font-family:'Poppins',sans-serif;
-      background:#fff;
-      color:var(--ink);
+      font-family:'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+    }
+
+    /* Soft luxury background */
+    .bg-veil{
+      position:fixed;
+      inset:-140px;
+      pointer-events:none;
+      z-index:-1;
+      background:
+        radial-gradient(700px 420px at 14% 10%, rgba(247,239,255,.95), rgba(255,255,255,0) 65%),
+        radial-gradient(820px 520px at 88% 8%, rgba(239,229,255,.95), rgba(255,255,255,0) 62%),
+        radial-gradient(820px 520px at 70% 88%, rgba(247,239,255,.85), rgba(255,255,255,0) 60%);
     }
 
     .container{
-      width:min(1120px,calc(100% - 32px));
-      margin:auto;
+      width:min(1120px, calc(100% - 36px));
+      margin-inline:auto;
     }
 
-    /* ===== HEADER ===== */
+    /* ===== Header ===== */
     header{
       position:sticky;
       top:0;
       z-index:50;
-      background:#fff;
-      border-bottom:1px solid rgba(0,0,0,.08);
+      background: rgba(255,255,255,.86);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(35,31,43,.08);
     }
 
     .head-wrap{
       display:flex;
       align-items:center;
       justify-content:space-between;
-      padding:12px 0;
-      gap:14px;
+      gap:16px;
+      padding: 12px 0;
     }
 
     .brand{
       display:flex;
       align-items:center;
       gap:14px;
+      min-width: 280px;
     }
 
+    /* Logo */
     .logo-badge{
       width:72px;
       height:72px;
       border-radius:20px;
-      background:linear-gradient(135deg,rgba(184,138,68,.18),rgba(107,42,94,.12));
       display:grid;
       place-items:center;
-      box-shadow:0 10px 25px rgba(0,0,0,.12);
+      background: linear-gradient(135deg, rgba(184,138,68,.18), rgba(107,42,94,.10));
+      border: 1px solid rgba(184,138,68,.35);
+      box-shadow: 0 10px 25px rgba(184,138,68,.14);
+      overflow:hidden;
     }
-
     .logo-badge img{
-      width:85%;
-      height:85%;
+      width:84%;
+      height:84%;
       object-fit:contain;
+      filter: drop-shadow(0 8px 14px rgba(0,0,0,.12));
     }
 
     .brand-text .name{
-      font-family:'Playfair Display',serif;
-      font-size:20px;
-      font-weight:700;
-      color:var(--plum);
       margin:0;
+      font-family:'Playfair Display', serif;
+      font-weight:700;
+      letter-spacing:.5px;
+      color: var(--plum);
+      font-size: 19px;
+      line-height:1.1;
     }
-
     .brand-text .sub{
-      font-size:12px;
-      color:var(--muted);
+      margin-top:4px;
+      font-size: 12.5px;
+      color: var(--muted);
       font-weight:600;
     }
 
     nav{
       display:flex;
+      align-items:center;
       gap:10px;
       flex-wrap:wrap;
+      justify-content:flex-end;
     }
-
-    nav a, nav button{
-      padding:10px 14px;
-      border-radius:999px;
-      font-weight:700;
-      font-size:13px;
-      border:none;
-      cursor:pointer;
+    nav a{
       text-decoration:none;
-      background:none;
-      color:var(--muted);
+      color: var(--muted);
+      font-weight:700;
+      font-size: 13px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border:1px solid transparent;
+      transition:.2s;
     }
-
     nav a:hover{
-      background:#f3ecff;
-      color:var(--plum);
+      background: rgba(247,239,255,.7);
+      border-color: rgba(184,138,68,.20);
+      color: var(--plum);
     }
 
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding: 11px 14px;
+      border-radius: 999px;
+      text-decoration:none;
+      font-weight:800;
+      transition:.2s;
+      border:1px solid transparent;
+      white-space:nowrap;
+      cursor:pointer;
+    }
     .btn-wa{
-      background:var(--wa);
+      background: var(--wa);
       color:#fff;
     }
-    .btn-wa:hover{background:var(--wa2)}
+    .btn-wa:hover{ background: var(--wa2); }
 
-    /* ===== HERO ===== */
-    .hero{
-      padding:30px 0;
+    .btn-ghost{
+      background: rgba(184,138,68,.10);
+      color: var(--plum);
+      border-color: rgba(184,138,68,.28);
     }
+    .btn-ghost:hover{ background: rgba(184,138,68,.16); }
 
+    /* ===== Hero ===== */
+    .hero{ padding: 26px 0 18px; }
     .hero-card{
-      border-radius:26px;
-      background:linear-gradient(135deg,#f7efff,#ffffff);
-      padding:26px;
-      box-shadow:0 20px 50px rgba(0,0,0,.08);
-    }
-
-    .hero h1{
-      font-family:'Playfair Display',serif;
-      font-size:clamp(28px,4vw,44px);
-      color:var(--plum);
-      margin:0 0 10px;
-    }
-
-    .hero p{
-      color:var(--muted);
-      max-width:600px;
-    }
-
-    .hero-actions{
-      margin-top:14px;
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-    }
-
-    /* ===== SECTION ===== */
-    section{
-      padding:28px 0;
-    }
-
-    .section-title{
-      font-family:'Playfair Display',serif;
-      color:var(--plum);
-      font-size:26px;
-      margin-bottom:10px;
-    }
-
-    /* ===== FLOAT WHATSAPP ===== */
-    .wa-float{
-      position:fixed;
-      right:18px;
-      bottom:18px;
-      width:58px;
-      height:58px;
-      border-radius:18px;
-      background:var(--wa);
-      display:grid;
-      place-items:center;
-      cursor:pointer;
-      box-shadow:0 18px 40px rgba(0,0,0,.25);
-      z-index:99;
-    }
-    .wa-float:hover{background:var(--wa2)}
-
-    .wa-float svg{
-      width:28px;
-      height:28px;
-      fill:#fff;
-    }
-
-    /* ===== MODAL ===== */
-    .modal-bg{
-      position:fixed;
-      inset:0;
-      background:rgba(0,0,0,.4);
-      display:none;
-      align-items:flex-end;
-      justify-content:center;
-      padding:16px;
-      z-index:120;
-    }
-
-    .modal{
-      background:#fff;
-      width:min(520px,100%);
-      border-radius:22px;
+      background: linear-gradient(135deg, rgba(247,239,255,.95), rgba(255,255,255,.92));
+      border: 1px solid rgba(184,138,68,.18);
+      border-radius: 26px;
+      box-shadow: var(--shadow);
       overflow:hidden;
-      animation:pop .2s ease;
     }
-
-    @keyframes pop{
-      from{transform:translateY(20px);opacity:0}
-      to{transform:translateY(0);opacity:1}
-    }
-
-    .modal-header{
-      padding:16px;
-      background:#f7efff;
-      display:flex;
-      justify-content:space-between;
+    .hero-inner{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:18px;
+      padding: 26px;
       align-items:center;
     }
 
-    .modal-header h3{
-      margin:0;
-      font-family:'Playfair Display',serif;
-      color:var(--plum);
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding: 10px 14px;
+      border-radius:999px;
+      background: rgba(255,255,255,.76);
+      border: 1px solid rgba(184,138,68,.22);
+      color: var(--plum);
+      font-weight:800;
+      font-size: 12px;
+      width:fit-content;
+    }
+    .badge::before{ content:"✦"; color: var(--gold); font-size: 14px; }
+
+    .hero h1{
+      font-family:'Playfair Display', serif;
+      font-size: clamp(30px, 3.8vw, 48px);
+      margin: 14px 0 8px;
+      color: var(--plum);
+      letter-spacing:.6px;
+      line-height:1.08;
+    }
+    .hero p{
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height:1.7;
+      max-width: 60ch;
     }
 
-    .close{
-      background:none;
-      border:none;
-      font-size:22px;
-      cursor:pointer;
+    .hero-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top: 10px;
     }
 
-    .modal-body{
-      padding:16px;
+    .hero-right{
+      background: rgba(255,255,255,.65);
+      border: 1px solid rgba(184,138,68,.16);
+      border-radius: 20px;
+      padding: 18px;
+    }
+    .hero-right h3{
+      font-family:'Playfair Display', serif;
+      margin: 0 0 10px;
+      color: var(--plum);
+      letter-spacing:.4px;
+    }
+    .mini{
       display:grid;
+      gap:10px;
+      margin-top: 10px;
+    }
+    .mini .item{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(247,239,255,.55);
+      border: 1px solid rgba(35,31,43,.06);
+    }
+    .mini .tick{
+      width: 26px; height: 26px;
+      border-radius: 10px;
+      display:grid;
+      place-items:center;
+      background: rgba(184,138,68,.18);
+      color: var(--gold);
+      font-weight:900;
+      flex: 0 0 auto;
+    }
+    .mini .text{
+      color: var(--muted);
+      font-size: 13px;
+      line-height:1.5;
+    }
+    .mini strong{ color: var(--plum); }
+
+    section{ padding: 22px 0; }
+
+    .section-head{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom: 14px;
+    }
+    .section-title{
+      font-family:'Playfair Display', serif;
+      font-size: 28px;
+      margin:0;
+      color: var(--plum);
+      letter-spacing:.4px;
+    }
+    .section-sub{
+      margin:0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height:1.6;
+      max-width: 78ch;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .card{
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 14px 14px;
+      box-shadow: 0 10px 26px rgba(0,0,0,.04);
+      transition:.2s;
+    }
+    .card:hover{
+      transform: translateY(-4px);
+      box-shadow: 0 18px 36px rgba(107,42,94,.12);
+      border-color: rgba(184,138,68,.22);
+    }
+
+    .svc{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+    }
+    .svc .dot{
+      width: 30px;
+      height: 30px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(184,138,68,.22), rgba(107,42,94,.10));
+      border: 1px solid rgba(184,138,68,.22);
+      display:grid;
+      place-items:center;
+      color: var(--gold);
+      font-weight:900;
+      flex:0 0 auto;
+    }
+    .svc h4{
+      margin: 2px 0 4px;
+      font-size: 14px;
+      color: var(--plum);
+      letter-spacing:.2px;
+    }
+    .svc p{
+      margin:0;
+      font-size: 12.5px;
+      color: var(--muted);
+      line-height:1.55;
+    }
+
+    .frame{
+      border-radius: 22px;
+      padding: 18px;
+      border: 1px solid rgba(184,138,68,.22);
+      background: linear-gradient(135deg, rgba(255,255,255,.92), rgba(247,239,255,.70));
+      box-shadow: var(--shadow);
+    }
+    .frame .cap{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      font-weight:900;
+      letter-spacing:.5px;
+      color: var(--gold);
+      text-transform:uppercase;
+      font-size: 12px;
+    }
+    .frame h3{
+      font-family:'Playfair Display', serif;
+      margin: 10px 0 10px;
+      color: var(--plum);
+      font-size: 24px;
+      letter-spacing:.4px;
+    }
+    .checklist{
+      list-style:none;
+      padding:0;
+      margin:0;
+      display:grid;
+      gap:10px;
+    }
+    .checklist li{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      color: var(--muted);
+      line-height:1.55;
+      font-size: 14px;
+    }
+    .checklist li::before{
+      content:"✓";
+      width: 22px; height: 22px;
+      border-radius: 10px;
+      background: rgba(184,138,68,.18);
+      border: 1px solid rgba(184,138,68,.25);
+      display:grid;
+      place-items:center;
+      color: var(--gold);
+      font-weight:900;
+      flex:0 0 auto;
+      margin-top: 1px;
+    }
+
+    footer{
+      margin-top: 18px;
+      padding: 26px 0;
+      border-top: 1px solid rgba(35,31,43,.08);
+      color: var(--muted);
+      font-size: 13px;
+    }
+    footer .foot{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+    .gold{ color: var(--gold); font-weight:900; }
+
+    /* ===== Floating WhatsApp ===== */
+    .wa-float{
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 99;
+      width: 58px;
+      height: 58px;
+      border-radius: 18px;
+      background: var(--wa);
+      display:grid;
+      place-items:center;
+      box-shadow: 0 18px 40px rgba(0,0,0,.18);
+      border: 1px solid rgba(255,255,255,.4);
+      cursor:pointer;
+      transition:.2s;
+    }
+    .wa-float:hover{ background: var(--wa2); transform: translateY(-2px); }
+    .wa-float svg{ width:28px; height:28px; fill:#fff; }
+
+    /* ===== Modal ===== */
+    .modal-backdrop{
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.35);
+      display:none;
+      align-items:flex-end;
+      justify-content:center;
+      padding: 18px;
+      z-index: 120;
+    }
+    .modal{
+      width: min(560px, 100%);
+      background:#fff;
+      border-radius: 22px;
+      border: 1px solid rgba(35,31,43,.10);
+      box-shadow: 0 25px 70px rgba(0,0,0,.25);
+      overflow:hidden;
+      transform: translateY(10px);
+      animation: pop .18s ease-out forwards;
+    }
+    @keyframes pop{ to{ transform: translateY(0); } }
+
+    .modal-head{
+      padding: 16px 16px 12px;
+      background: linear-gradient(135deg, rgba(247,239,255,.95), rgba(255,255,255,.92));
+      border-bottom: 1px solid rgba(35,31,43,.08);
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
       gap:12px;
     }
+    .modal-head h4{
+      margin:0;
+      font-family:'Playfair Display', serif;
+      color: var(--plum);
+      font-size: 18px;
+      letter-spacing:.3px;
+    }
+    .modal-head p{
+      margin:6px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height:1.5;
+    }
+    .modal-close{
+      border:0;
+      background: rgba(35,31,43,.06);
+      color: var(--ink);
+      font-weight:900;
+      border-radius: 12px;
+      width: 40px;
+      height: 40px;
+      cursor:pointer;
+      transition:.2s;
+    }
+    .modal-close:hover{ background: rgba(35,31,43,.10); }
 
-    .field label{
-      font-size:12px;
-      font-weight:700;
-      color:var(--muted);
+    .modal-body{
+      padding: 14px 16px 16px;
+      display:grid;
+      gap: 12px;
     }
 
+    /* Booking form */
+    .form{
+      display:grid;
+      gap: 12px;
+    }
+    .row{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+    }
+    .field label{
+      display:block;
+      font-size:12px;
+      color: var(--muted);
+      font-weight:800;
+      margin: 0 0 6px;
+    }
     .field input, .field select, .field textarea{
       width:100%;
-      padding:12px;
-      border-radius:14px;
-      border:1px solid #ccc;
-      font-family:'Poppins',sans-serif;
+      border-radius: 14px;
+      border: 1px solid rgba(35,31,43,.12);
+      padding: 12px 12px;
+      font-family:'Poppins', sans-serif;
+      outline:none;
+      background:#fff;
+    }
+    .field textarea{ min-height: 80px; resize: vertical; }
+
+    .field input:focus, .field select:focus, .field textarea:focus{
+      border-color: rgba(184,138,68,.35);
+      box-shadow: 0 0 0 4px rgba(184,138,68,.12);
     }
 
     .actions{
       display:flex;
       gap:10px;
-      margin-top:6px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:flex-start;
+      margin-top: 2px;
     }
 
-    /* ===== MOBILE ===== */
-    @media(max-width:600px){
-      .head-wrap{flex-direction:column;text-align:center}
-      .logo-badge{width:104px;height:104px}
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero-inner{ grid-template-columns: 1fr; }
+      .grid{ grid-template-columns: repeat(2, 1fr); }
+      nav{ justify-content:flex-start; }
+    }
+    @media (max-width: 560px){
+      .head-wrap{
+        flex-direction:column;
+        align-items:center;
+        gap:12px;
+        padding: 10px 0;
+      }
+      .brand{
+        width:100%;
+        justify-content:center;
+        text-align:center;
+        min-width:auto;
+      }
+
+      /* Bigger logo for mobile */
+      .logo-badge{
+        width:104px;
+        height:104px;
+        border-radius:28px;
+      }
+      .logo-badge img{
+        width:88%;
+        height:88%;
+      }
+
+      nav{
+        width:100%;
+        justify-content:center;
+        gap:8px;
+      }
+      .hero-inner{ padding: 18px; }
+      .row{ grid-template-columns: 1fr; }
     }
   </style>
 </head>
 
 <body>
+  <div class="bg-veil"></div>
 
-<header>
-  <div class="container">
-    <div class="head-wrap">
-      <div class="brand">
-        <div class="logo-badge">
-          <img src="logo.png" alt="Rara Zahra Logo">
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <div class="head-wrap">
+        <div class="brand">
+          <div class="logo-badge">
+            <!-- IMPORTANT: logo name = logo.png (same folder as index.html) -->
+            <img src="logo.png" alt="Rara Zahra Logo">
+          </div>
+
+          <div class="brand-text">
+            <p class="name">Rara Zahra Empire Beauty</p>
+            <div class="sub">Spa &amp; Salon • Extra Luxury Experience</div>
+          </div>
         </div>
-        <div class="brand-text">
-          <p class="name">Rara Zahra Empire Beauty</p>
-          <div class="sub">Spa & Salon • Extra Luxury</div>
+
+        <nav>
+          <a href="#perkhidmatan">Perkhidmatan</a>
+          <a href="#kenapa">Kenapa Kami</a>
+          <a href="#hubungi">Hubungi</a>
+          <button class="btn btn-wa" type="button" id="openBookingTop">Booking Slot</button>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-card">
+          <div class="hero-inner">
+            <div>
+              <div class="badge">Extra Luxury • Premium Booking</div>
+              <h1>Tempah Slot Dengan Mudah,<br/>Terus WhatsApp.</h1>
+              <p>
+                Klik <b>Booking Slot</b>, pilih <b>tarikh (calendar)</b>, <b>masa</b> dan <b>jenis rawatan</b>.
+                Sistem akan sediakan mesej WhatsApp automatik.
+              </p>
+
+              <div class="hero-actions">
+                <button class="btn btn-wa" type="button" id="openBookingHero">Booking Slot</button>
+                <a class="btn btn-ghost" href="#perkhidmatan">Lihat Perkhidmatan</a>
+              </div>
+            </div>
+
+            <div class="hero-right">
+              <h3>Signature Promise</h3>
+              <div class="mini">
+                <div class="item">
+                  <div class="tick">✓</div>
+                  <div class="text"><strong>Booking Form</strong> — tarikh, masa & rawatan.</div>
+                </div>
+                <div class="item">
+                  <div class="tick">✓</div>
+                  <div class="text"><strong>Auto WhatsApp</strong> — mesej terus siap.</div>
+                </div>
+                <div class="item">
+                  <div class="tick">✓</div>
+                  <div class="text"><strong>Mobile Friendly</strong> — logo besar & kemas.</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
+    </section>
 
-      <nav>
-        <a href="#perkhidmatan">Perkhidmatan</a>
-        <button class="btn-wa" id="openBooking">Booking Slot</button>
-      </nav>
+    <!-- PERKHIDMATAN -->
+    <section id="perkhidmatan">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">Perkhidmatan Kami</h2>
+            <p class="section-sub">Pilih rawatan dalam booking form untuk senarai lengkap.</p>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="card"><div class="svc"><div class="dot">✦</div><div><h4>Urutan Tradisional Melayu</h4><p>Kelegaan badan, lenguh & stress.</p></div></div></div>
+          <div class="card"><div class="svc"><div class="dot">✦</div><div><h4>Bertungku / Bertangas</h4><p>Terapi tradisional untuk relaksasi.</p></div></div></div>
+          <div class="card"><div class="svc"><div class="dot">✦</div><div><h4>Facial</h4><p>Penjagaan wajah lebih bersih & segar.</p></div></div></div>
+          <div class="card"><div class="svc"><div class="dot">✦</div><div><h4>Skrub Badan</h4><p>Buang sel kulit mati & halus.</p></div></div></div>
+          <div class="card"><div class="svc"><div class="dot">✦</div><div><h4>Manicure & Pedicure</h4><p>Penampilan rapi & kemas.</p></div></div></div>
+          <div class="card"><div class="svc"><div class="dot">✦</div><div><h4>Hair Salon</h4><p>Perkhidmatan rambut (wanita).</p></div></div></div>
+        </div>
+
+        <div style="margin-top:14px; display:flex; gap:12px; flex-wrap:wrap;">
+          <button class="btn btn-wa" type="button" id="openBookingServices">Booking Slot Sekarang</button>
+          <a class="btn btn-ghost" href="#hubungi">Hubungi</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY -->
+    <section id="kenapa">
+      <div class="container">
+        <div class="frame">
+          <div class="cap">Kenapa Pilih Kami</div>
+          <h3>Reason to Trust</h3>
+          <ul class="checklist">
+            <li>Harga <b>berpatutan</b> & telus.</li>
+            <li>Ruang <b>selesa</b> & privasi terjaga.</li>
+            <li>Kawasan <b>senang parking</b>.</li>
+            <li>Layanan <b>mesra & profesional</b>.</li>
+          </ul>
+
+          <div style="margin-top:14px; display:flex; gap:12px; flex-wrap:wrap;">
+            <button class="btn btn-wa" type="button" id="openBookingWhy">Booking Slot</button>
+            <a class="btn btn-ghost" href="#hubungi">Hubungi</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HUBUNGI -->
+    <section id="hubungi">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">Hubungi & Tempahan</h2>
+            <p class="section-sub">Klik booking slot untuk hantar details terus ke WhatsApp.</p>
+          </div>
+        </div>
+
+        <div class="frame">
+          <div class="cap">WhatsApp</div>
+          <h3>+6011-1491 7935</h3>
+          <div style="margin-top:14px; display:flex; gap:12px; flex-wrap:wrap;">
+            <button class="btn btn-wa" type="button" id="openBookingContact">Booking Slot</button>
+            <button class="btn btn-ghost" type="button" id="openQuickAsk">Tanya Servis</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="foot">
+        <div>&copy; <span id="year"></span> <span class="gold">Rara Zahra Empire Beauty</span></div>
+        <div style="opacity:.9;">Extra Luxury • Mobile Friendly</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <div class="wa-float" id="waFloat" title="Booking Slot">
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+      <path d="M19.11 17.2c-.27-.14-1.58-.78-1.83-.87-.25-.09-.43-.14-.61.14-.18.27-.7.87-.86 1.05-.16.18-.32.2-.59.07-.27-.14-1.14-.42-2.18-1.34-.81-.72-1.35-1.6-1.51-1.87-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.48-.84-2.02-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.98 2.63 1.12 2.82c.14.18 1.92 2.93 4.65 4.1.65.28 1.15.45 1.54.57.65.21 1.25.18 1.72.11.52-.08 1.58-.64 1.8-1.26.22-.62.22-1.15.16-1.26-.07-.11-.25-.18-.52-.32zM16.02 3C9.4 3 4.02 8.38 4.02 15c0 2.31.66 4.47 1.81 6.31L4 29l7.86-1.79c1.78.97 3.82 1.53 5.99 1.53 6.62 0 12-5.38 12-12S22.64 3 16.02 3zm0 23.56c-2.05 0-3.96-.6-5.58-1.62l-.4-.25-4.66 1.06 1.01-4.54-.26-.42A10.43 10.43 0 0 1 5.59 15c0-5.75 4.68-10.43 10.43-10.43S26.45 9.25 26.45 15 21.77 25.56 16.02 25.56z"/>
+    </svg>
+  </div>
+
+  <!-- Booking Modal -->
+  <div class="modal-backdrop" id="modal">
+    <div class="modal" role="dialog" aria-modal="true" aria-label="Booking Form">
+      <div class="modal-head">
+        <div>
+          <h4>Booking Slot</h4>
+          <p>Isi tarikh, masa & jenis rawatan. Tekan “Hantar ke WhatsApp”.</p>
+        </div>
+        <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="form">
+          <div class="row">
+            <div class="field">
+              <label>Nama</label>
+              <input id="bkName" type="text" placeholder="Contoh: Nur Aina" />
+            </div>
+            <div class="field">
+              <label>No Telefon (optional)</label>
+              <input id="bkPhone" type="tel" placeholder="Contoh: 01x-xxxxxxx" />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="field">
+              <label>Tarikh (Calendar)</label>
+              <input id="bkDate" type="date" />
+            </div>
+            <div class="field">
+              <label>Masa</label>
+              <input id="bkTime" type="time" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Jenis Rawatan</label>
+            <select id="bkService">
+              <option value="">-- Pilih rawatan --</option>
+              <option>Urutan Tradisional Melayu</option>
+              <option>Urutan Batin Wanita</option>
+              <option>Urutan Saraf</option>
+              <option>Urutan Patah / Terseliuh / Terkehel</option>
+              <option>Urutan Ibu Hamil</option>
+              <option>Urutan Ikhtiar Hamil</option>
+              <option>Urutan Bayi</option>
+              <option>Urutan Peranakan & Senggak Rahim</option>
+              <option>Bertungku</option>
+              <option>Bertangas</option>
+              <option>Pakej Berpantang</option>
+              <option>Mandi Bunga Aura Seri</option>
+              <option>Mandi Susu</option>
+              <option>Mandi Limau</option>
+              <option>Mandi Terapi Ais</option>
+              <option>Skrub Badan</option>
+              <option>Rawatan Resdung</option>
+              <option>Facial</option>
+              <option>Manicure & Pedicure</option>
+              <option>Hair Salon</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label>Nota (optional)</label>
+            <textarea id="bkNote" placeholder="Contoh: saya nak slot awal / ada sakit belakang / dll"></textarea>
+          </div>
+
+          <div class="actions">
+            <button class="btn btn-wa" type="button" id="bkSend">Hantar ke WhatsApp</button>
+            <button class="btn btn-ghost" type="button" id="bkAsk">Tanya Servis</button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</header>
 
-<main>
-  <section class="hero">
-    <div class="container">
-      <div class="hero-card">
-        <h1>Tempah Slot Dengan Mudah</h1>
-        <p>Pilih tarikh, masa dan jenis rawatan. Mesej WhatsApp akan dihantar secara automatik.</p>
-        <div class="hero-actions">
-          <button class="btn-wa" id="openBookingHero">Booking Slot</button>
-        </div>
-      </div>
-    </div>
-  </section>
+  <script>
+    // ✅ ALL AUTO WHATSAPP USE THIS NUMBER
+    // Format for wa.me: NO '+' NO '-' ONLY DIGITS
+    const WA_NUMBER = "601114917935"; // +6011-14917935
 
-  <section id="perkhidmatan">
-    <div class="container">
-      <h2 class="section-title">Perkhidmatan Kami</h2>
-      <p>Urutan • Bertungku • Bertangas • Facial • Skrub Badan • Manicure & Pedicure • Hair Salon</p>
-    </div>
-  </section>
-</main>
+    const modal = document.getElementById("modal");
+    const modalClose = document.getElementById("modalClose");
 
-<!-- Floating WhatsApp -->
-<div class="wa-float" id="waFloat">
-  <svg viewBox="0 0 32 32"><path d="M16.02 3C9.4 3 4.02 8.38 4.02 15c0 2.31.66 4.47 1.81 6.31L4 29l7.86-1.79c1.78.97 3.82 1.53 5.99 1.53 6.62 0 12-5.38 12-12S22.64 3 16.02 3z"/></svg>
-</div>
+    const bkName = document.getElementById("bkName");
+    const bkPhone = document.getElementById("bkPhone");
+    const bkDate = document.getElementById("bkDate");
+    const bkTime = document.getElementById("bkTime");
+    const bkService = document.getElementById("bkService");
+    const bkNote = document.getElementById("bkNote");
 
-<!-- MODAL -->
-<div class="modal-bg" id="modal">
-  <div class="modal">
-    <div class="modal-header">
-      <h3>Booking Slot</h3>
-      <button class="close" id="closeModal">✕</button>
-    </div>
-    <div class="modal-body">
-      <div class="field">
-        <label>Nama</label>
-        <input id="bkName">
-      </div>
-      <div class="field">
-        <label>Tarikh</label>
-        <input type="date" id="bkDate">
-      </div>
-      <div class="field">
-        <label>Masa</label>
-        <input type="time" id="bkTime">
-      </div>
-      <div class="field">
-        <label>Jenis Rawatan</label>
-        <select id="bkService">
-          <option>Urutan Tradisional</option>
-          <option>Bertungku</option>
-          <option>Bertangas</option>
-          <option>Facial</option>
-          <option>Skrub Badan</option>
-          <option>Manicure & Pedicure</option>
-          <option>Hair Salon</option>
-        </select>
-      </div>
-      <div class="actions">
-        <button class="btn-wa" id="sendBooking">Hantar WhatsApp</button>
-      </div>
-    </div>
-  </div>
-</div>
+    document.getElementById("year").innerText = new Date().getFullYear();
 
-<script>
-  const WA_NUMBER = "601114917935"; // +6011-14917935
+    // Min date = today
+    const today = new Date();
+    const yyyy = today.getFullYear();
+    const mm = String(today.getMonth()+1).padStart(2,'0');
+    const dd = String(today.getDate()).padStart(2,'0');
+    bkDate.min = `${yyyy}-${mm}-${dd}`;
 
-  const modal = document.getElementById("modal");
-  document.getElementById("openBooking").onclick = () => modal.style.display="flex";
-  document.getElementById("openBookingHero").onclick = () => modal.style.display="flex";
-  document.getElementById("waFloat").onclick = () => modal.style.display="flex";
-  document.getElementById("closeModal").onclick = () => modal.style.display="none";
+    function openModal(){ modal.style.display = "flex"; }
+    function closeModal(){ modal.style.display = "none"; }
 
-  document.getElementById("sendBooking").onclick = () => {
-    const name = bkName.value || "-";
-    const date = bkDate.value;
-    const time = bkTime.value;
-    const service = bkService.value;
-
-    if(!date || !time){
-      alert("Sila pilih tarikh & masa");
-      return;
+    function openWhatsApp(message){
+      const text = encodeURIComponent(message);
+      window.open(`https://wa.me/${WA_NUMBER}?text=${text}`, "_blank");
     }
 
-    const msg = `Hi Rara Zahra Empire Beauty,%0ANama: ${name}%0ATarikh: ${date}%0AMasa: ${time}%0ARawatan: ${service}`;
-    window.open(`https://wa.me/${WA_NUMBER}?text=${msg}`,"_blank");
-  };
-</script>
+    // Open modal triggers
+    ["openBookingTop","openBookingHero","openBookingServices","openBookingWhy","openBookingContact"]
+      .forEach(id => document.getElementById(id).addEventListener("click", openModal));
 
+    // Floating opens modal
+    document.getElementById("waFloat").addEventListener("click", openModal);
+
+    // Ask button (simple)
+    document.getElementById("openQuickAsk").addEventListener("click", ()=>{
+      openWhatsApp("Hi Rara Zahra Empire Beauty, saya nak tanya servis yang sesuai untuk saya. Boleh bantu?");
+    });
+
+    // Close modal
+    modalClose.addEventListener("click", closeModal);
+    modal.addEventListener("click", (e)=>{ if(e.target === modal) closeModal(); });
+    window.addEventListener("keydown", (e)=>{ if(e.key === "Escape") closeModal(); });
+
+    // Booking submit
+    document.getElementById("bkSend").addEventListener("click", ()=>{
+      const name = bkName.value.trim() || "-";
+      const phone = bkPhone.value.trim() || "-";
+      const date = bkDate.value || "";
+      const time = bkTime.value || "";
+      const service = bkService.value || "";
+      const note = bkNote.value.trim() || "-";
+
+      if(!date || !time || !service){
+        alert("Sila isi: Tarikh, Masa & Jenis Rawatan.");
+        return;
+      }
+
+      const msg =
+`Hi Rara Zahra Empire Beauty, saya nak BOOKING SLOT.
+Nama: ${name}
+No Telefon: ${phone}
+Tarikh: ${date}
+Masa: ${time}
+Jenis Rawatan: ${service}
+Nota: ${note}`;
+
+      openWhatsApp(msg);
+    });
+
+    // Ask inside modal
+    document.getElementById("bkAsk").addEventListener("click", ()=>{
+      openWhatsApp("Hi Rara Zahra Empire Beauty, saya nak tanya servis yang sesuai untuk saya. Boleh bantu?");
+    });
+  </script>
 </body>
 </html>
